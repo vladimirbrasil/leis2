@@ -1,0 +1,23 @@
+<h1>Listing verbos</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @verbos.each do |verbo| %>
+  <tr>
+    <td><%= verbo.name %></td>
+    <td><%= link_to 'Show', verbo %></td>
+    <td><%= link_to 'Edit', edit_verbo_path(verbo) %></td>
+    <td><%= link_to 'Destroy', verbo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Verbo', new_verbo_path %>
