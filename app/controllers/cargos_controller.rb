@@ -2,11 +2,11 @@ class CargosController < ApplicationController
   # GET /cargos
   # GET /cargos.json
   def index
-    @cargos = Cargo.all
+    @cargos = Cargo.where("name like ?", "%#{params[:q]}%")
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @cargos }
+      format.json { render json: @cargos.map(&:attributes) }
     end
   end
 

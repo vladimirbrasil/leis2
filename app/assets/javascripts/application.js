@@ -20,4 +20,9 @@ $(function() {
     prePopulate: $("#area_verbo_tokens").data("pre"),
     theme: "facebook"
   });
+  $("#area_cargo_tokens").tokenInput("/cargos.json", {
+    crossDomain: false,
+    prePopulate: $("#area_cargo_tokens").data("pre"),
+    theme: "facebook"
+  });
 });
